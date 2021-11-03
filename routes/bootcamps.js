@@ -10,7 +10,7 @@ const {
 const router = express.Router();
 
 router
-    .route('/radius/:zipcode/:distance')
+    .route("/radius/:zipcode/:distance")
     .get(getBootcampInRadius);
 
 router
