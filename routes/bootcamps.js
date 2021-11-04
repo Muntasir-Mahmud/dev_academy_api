@@ -9,6 +9,13 @@ const {
 } = require('../controllers/bootcamps')
 const router = express.Router();
 
+// Include other resource routers
+const courseRouter = require('./courses');
+
+// Re-route to course routers
+router
+    .use('/:bootcampId/courses', courseRouter);
+
 router
     .route("/radius/:zipcode/:distance")
     .get(getBootcampInRadius);
